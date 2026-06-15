@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for post in object_list %}
+        <div class="post-entry">
+            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title}}</a></h2>
+            <p>{{ post.body | slice:"100"}}</p>
+        </div>
+    
+       <div class="btn_row">
+           <button><a href="{% url 'post_detail' post.pk %}">view</a></button>
+           <button><a href="{% url 'post_delete' post.pk %}" style="color:red">delete</a></button>
+           <button><a href="{% url 'post_edit' post.pk %}">edit</a></button>
+       </div>
+    {% endfor %}
+{% endblock content %}

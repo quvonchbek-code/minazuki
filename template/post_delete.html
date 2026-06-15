@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>delete this post</h1>
+<form action="" method="post"> {% csrf_token %}
+    <p>rostan ochirmoqchimisan qncha mehnating ketti axir</p>
+    <input type="submit" value="confirm" >
+    <a href="{% url 'post_detail' post.pk %}">cancel</a>
+
+</form>
+{% endblock content %}

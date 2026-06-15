@@ -1,0 +1,18 @@
+a {
+    text-decoration:none;
+    color:blueviolet;
+}
+.navbar {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+}
+.btn_row {
+    display:flex;
+    gap:10px;
+    aligin-items:center;
+    color:beige;
+}
+.btn_row a {
+    color:orange;
+}

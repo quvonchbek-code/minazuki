@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sariq dev</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <span>|</span>
+        <a href="{% url 'post_new' %}">Create post</a>
+
+        
+    </nav>
+    {% if user.is_authenticated %}
+        <p>yokoso,{{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}"></a></p>
+    {% else %}
+        <p>
+            <a href="{% url 'login' %}">saytga kirish</a>
+        </p>
+    {% endif %}
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <footer>
+        <h2><a href="{% url 'post_new' %}">create new post</a></h2>
+    </footer>
+</body>
+</html>
